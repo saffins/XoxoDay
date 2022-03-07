@@ -46,10 +46,12 @@ public class XoxoDayHomeTest {
 	public void AddItemWithQuantityAdditionButton() {
 
 		driver.navigate().back();
+		addItem = new AddItem(driver);
+
 		addItem.AddItemWithQuantityAdditionButton();
 
 		String totalVal = driver.findElement(By.xpath("//*[contains(@class,'totalValue')]")).getText();
-		
+
 		// Verifying if total value in the end of checkout page is found as expected or
 		// not
 		Assert.assertEquals(totalVal, "5,394.00");
